@@ -1,0 +1,27 @@
+{
+  "name": "genocog-api",
+  "version": "0.1.0",
+  "description": "API & backend for the Genocog game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelalejandro/genocog-api.git"
+  },
+  "keywords": [
+    "genocog",
+    "api",
+    "backend"
+  ],
+  "author": "Joel A. Villarreal Bertoldi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joelalejandro/genocog-api/issues"
+  },
+  "homepage": "https://github.com/joelalejandro/genocog-api#readme",
+  "dependencies": {
+    "restify": "^4.1.1"
+  }
+}
