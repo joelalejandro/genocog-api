@@ -1,23 +1,24 @@
 let restify = require('restify'),
     cookies = require('restify-cookies'),
-    appPackage = require('./package');
+    appPackage = require('./package'),
+    config = require('config');
 
-let server = restify.createServer(appPackage),
-    port = 4201,
-    appUrl = 'http://localhost:4200/profile';
+let genocogSettings = config.get('genocog'),
+    server = restify.createServer(appPackage),
+    port = genocogSettings.api.port,
+    routes = genocogSettings.api.routes,
+    endpoints = {};
 
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 server.use(cookies.parse);
 
-server.get('/api/23andme', function(req, res, next) {
-    if (req.cookies['23andme'] !== 'connected') {
-        res.setCookie('23andme', 'connected');
-    }
-    res.redirect(appUrl, next);
-    return next();
-});
+endpoints.api23andme = require('./api/23andme');
+endpoints.genome = require('./api/genome');
+
+server.get(routes.api23andme, endpoints.api23andme);
+server.get(routes.genome, endpoints.genome);
 
 server.listen(port, function() {
     console.log(server.name + ' running on ' + server.url);
