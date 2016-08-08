@@ -26,10 +26,15 @@
     "restify": "^4.1.1"
   },
   "devDependencies": {
+    "bluebird": "^3.4.1",
+    "config": "^1.21.0",
     "eslint": "^3.2.2",
     "eslint-config-standard": "^5.3.5",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
+    "moment": "^2.14.1",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.0",
     "restify-cookies": "^0.2.2"
   }
 }
