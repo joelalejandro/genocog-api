@@ -1,0 +1,5 @@
+# Test the Genome API (really from 23andme).
+
+GET https://api.23andme.com/1/demo/genomes/SP1_MOTHER_V4/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer 25442869bbedbe613064bdece7734321
